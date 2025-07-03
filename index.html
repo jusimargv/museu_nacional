@@ -1,5 +1,5 @@
 <!-- =========================== INÍCIO DO DOCUMENTO HTML =========================== -->
-<!-- Declaração do tipo de documento HTML5 -->
+<!-- Declaração do tipo de documento HTML5, informa ao navegador que o documento segue o padrão HTML5 -->
 <!doctype html>
 <!-- Início do elemento raiz do HTML, define o idioma da página como português do Brasil -->
 <html lang="pt-br">
@@ -7,43 +7,50 @@
     <!-- =========================== INÍCIO DO HEAD =========================== -->
     <!-- Título da página exibido na aba do navegador -->
     <title>Museu Nacional</title>
-    <!-- Definição do conjunto de caracteres -->
+    <!-- Definição do conjunto de caracteres para suportar acentuação e caracteres especiais -->
     <meta charset="UTF-8" />
-    <!-- Compatibilidade com Internet Explorer -->
+    <!-- Compatibilidade com Internet Explorer, força o uso do modo mais recente de renderização -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Responsividade para dispositivos móveis -->
+    <!-- Responsividade para dispositivos móveis, ajusta o layout conforme a largura da tela -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Importação do CSS para normalizar estilos entre navegadores -->
+    <!-- Importação do CSS para normalizar estilos entre navegadores, garantindo consistência visual -->
     <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
-    <!-- Importação do CSS principal do site -->
+    <!-- Importação do CSS principal do site, responsável pelo estilo visual -->
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <!-- Suporte a tags HTML5 em navegadores antigos (IE < 9) -->
+    <!-- Suporte a tags HTML5 em navegadores antigos (IE < 9), permite uso de elementos semânticos -->
     <script src="./js/html5shiv.js" defer></script>
-    <!-- Polyfill para Flexbox em navegadores antigos -->
+    <!-- Polyfill para Flexbox em navegadores antigos, garante compatibilidade do layout flexível -->
     <script src="./js/flexibility.js" defer></script>
     <!-- =========================== FIM DO HEAD =========================== -->
   </head>
   <body>
     <!-- =========================== INÍCIO DO BODY =========================== -->
-    <!-- Container principal que envolve todo o conteúdo da página -->
+    <!-- Container principal que envolve todo o conteúdo da página, centraliza e limita a largura -->
     <div id="container">
       <!-- =========================== INÍCIO DO HEADER =========================== -->
       <!-- Cabeçalho do site, contém o logotipo e o menu de navegação principal -->
       <header id="cabecalho">
+        <!-- Área do logotipo do museu -->
         <div id="logo">
-          <h1><a href="index.html">Museu Nacional</a></h1>
+          <!-- Título principal do site, importante para SEO e acessibilidade -->
+          <h1>
+            <!-- Link para a página inicial, envolve o nome do museu -->
+            <a href="index.html">Museu Nacional</a>
+          </h1>
         </div>
         <!-- =========================== INÍCIO DA NAVEGAÇÃO =========================== -->
-        <!-- Menu de navegação principal do site -->
+        <!-- Menu de navegação principal do site, permite acesso às principais seções -->
         <nav id="navegacao">
+          <!-- Lista não ordenada que representa os itens do menu -->
           <ul id="menu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Exposições</a></li>
-            <li><a href="#">Pesquisa</a></li>
-            <li><a href="#">Acervo</a></li>
-            <li><a href="#">Vídeos</a></li>
-            <li><a href="#">Fotos</a></li>
-            <li><a href="#">Contato</a></li>
+            <!-- Cada item do menu é um link para uma seção do site -->
+            <li><a href="#">Home</a></li> <!-- Página inicial -->
+            <li><a href="#">Exposições</a></li> <!-- Seção de exposições -->
+            <li><a href="#">Pesquisa</a></li> <!-- Seção de pesquisa -->
+            <li><a href="#">Acervo</a></li> <!-- Seção do acervo do museu -->
+            <li><a href="#">Vídeos</a></li> <!-- Seção de vídeos -->
+            <li><a href="#">Fotos</a></li> <!-- Seção de fotos -->
+            <li><a href="#">Contato</a></li> <!-- Seção de contato -->
           </ul>
         </nav>
         <!-- =========================== FIM DA NAVEGAÇÃO =========================== -->
@@ -54,48 +61,81 @@
         <!-- Área principal de conteúdo do site -->
         <div id="conteudo">
           <!-- =========================== INÍCIO DA SEÇÃO CAPA =========================== -->
+          <!-- Seção de destaque com a imagem principal do museu -->
           <section id="capa">
-            <img src="./image/museu.png" alt="Capa do Museu">
+            <!-- Imagem de capa do museu, com texto alternativo para acessibilidade -->
+            <img src="./image/museu.png" alt="Capa do Museu" />
           </section>
           <!-- =========================== FIM DA SEÇÃO CAPA =========================== -->
         </div>
         <!-- =========================== INÍCIO DO ASIDE =========================== -->
-        <!-- Barra lateral com depoimento e formulário de visita -->
+        <!-- Barra lateral com depoimento, formulário de visita e galeria de fotos -->
         <aside>
           <!-- =========================== INÍCIO DA SEÇÃO DEPOIMENTO =========================== -->
+          <!-- Seção para exibir um depoimento em destaque -->
           <section id="depoimento">
-            <img src="./image/depoimento.png" alt="Depoimento">
+            <!-- Imagem ilustrativa do depoimento -->
+            <img src="./image/depoimento.png" alt="Depoimento" />
           </section>
           <!-- =========================== FIM DA SEÇÃO DEPOIMENTO =========================== -->
           <!-- =========================== INÍCIO DA SEÇÃO VISITA =========================== -->
+          <!-- Seção com formulário para agendamento de visita ao museu -->
           <section id="visita">
+            <!-- Título da seção de visita -->
             <h4>Faça uma visita</h4>
             <!-- Formulário para agendamento de visita ao museu -->
             <form>
+              <!-- Agrupamento de campos do formulário -->
               <fieldset>
+                <!-- Legenda do grupo de campos -->
                 <legend>Selecione uma data</legend>
+                <!-- Rótulo para o campo de data -->
                 <label for="data">Data:</label>
-                <input class="campo" type="text" id="data" value="dd/mm/aaaa">
-                
+                <!-- Campo de texto para inserir a data da visita, valor padrão como placeholder -->
+                <input class="campo" type="text" id="data" value="dd/mm/aaaa" />
+
+                <!-- Rótulo para o campo de quantidade de pessoas -->
                 <label for="numero">Qtd de pessoas:</label>
-                <input class="campo pessoa" type="number" id="numero" value="1" min="1">
-                
+                <!-- Campo numérico para informar o número de visitantes, valor mínimo 1 -->
+                <input
+                  class="campo pessoa"
+                  type="number"
+                  id="numero"
+                  value="1"
+                  min="1"
+                />
+
+                <!-- Rótulo para o campo de email -->
                 <label for="email">Email:</label>
-                <input class="campo" type="text" id="email" value="email@email.com">
-                
+                <!-- Campo de texto para inserir o email do visitante, valor padrão como placeholder -->
+                <input
+                  class="campo"
+                  type="text"
+                  id="email"
+                  value="email@email.com"
+                />
               </fieldset>
-              <input class="botao" type="submit" value="Verificar disponibilidade">
+              <!-- Botão para enviar o formulário e verificar disponibilidade -->
+              <input
+                class="botao"
+                type="submit"
+                value="Verificar disponibilidade"
+              />
             </form>
           </section>
           <!-- =========================== FIM DA SEÇÃO VISITA =========================== -->
-        <section id="galeria">
-          <h4>Galeria de fotos</h4>
-          <br>
-          <img src="./image/imagem1.jpg" alt="Galeria">
-          <img src="./image/imagem2.jpg" alt="Galeria">
-          <img src="./image/imagem3.jpg" alt="Galeria">
-          <img src="./image/imagem4.jpg" alt="Galeria">
-        </section>
+          <!-- =========================== INÍCIO DA GALERIA DE FOTOS =========================== -->
+          <section id="galeria">
+            <!-- Título da galeria de fotos -->
+            <h4>Galeria de fotos</h4>
+            <br /> <!-- Quebra de linha para separar o título das imagens -->
+            <!-- Imagens da galeria, cada uma com texto alternativo -->
+            <img src="./image/imagem1.jpg" alt="Galeria" />
+            <img src="./image/imagem2.jpg" alt="Galeria" />
+            <img src="./image/imagem3.jpg" alt="Galeria" />
+            <img src="./image/imagem4.jpg" alt="Galeria" />
+          </section>
+          <!-- =========================== FIM DA GALERIA DE FOTOS =========================== -->
         </aside>
         <!-- =========================== FIM DO ASIDE =========================== -->
       </div>
