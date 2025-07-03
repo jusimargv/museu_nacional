@@ -555,6 +555,7 @@ footer {
   height: 100px; /* Altura fixa do rodapé */
   margin-top: -165px; /* Espaço acima do rodapé */
   color: #86521a; /* Cor do texto */
+  background: #cdc8b1 url(../image/fundo-rodape.png) no-repeat;
   font-weight: bold; /* Texto em negrito */
   font-size: 15px; /* Tamanho da fonte */
   flex-direction: column; /* Empilha os elementos verticalmente */
