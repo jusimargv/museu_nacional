@@ -1,102 +1,308 @@
-<!-- =========================== INÍCIO DO DOCUMENTO HTML =========================== -->
-<!-- Declaração do tipo de documento HTML5, informa ao navegador que o documento segue o padrão HTML5 -->
+<!-- 
+  =========================== INÍCIO DO DOCUMENTO HTML ===========================
+  Este documento HTML representa a página principal do site do Museu Nacional.
+  Ele está estruturado de forma semântica, com comentários detalhados explicando cada parte.
+-->
+
+<!-- Declaração do tipo de documento HTML5, essencial para que o navegador interprete corretamente o HTML moderno -->
 <!doctype html>
-<!-- Início do elemento raiz do HTML, define o idioma da página como português do Brasil -->
+
+<!-- Elemento raiz do HTML, define o idioma da página como português do Brasil -->
 <html lang="pt-br">
   <head>
-    <!-- =========================== INÍCIO DO HEAD =========================== -->
-    <!-- Título da página exibido na aba do navegador -->
+    <!-- 
+      =========================== INÍCIO DO HEAD ===========================
+      O <head> contém metadados, links para arquivos externos e scripts necessários para o funcionamento e visualização do site.
+    -->
+
+    <!-- Título da página, exibido na aba do navegador e importante para SEO -->
     <title>Museu Nacional</title>
-    <!-- Definição do conjunto de caracteres para suportar acentuação e caracteres especiais -->
+
+    <!-- Define o conjunto de caracteres como UTF-8, permitindo acentuação e caracteres especiais -->
     <meta charset="UTF-8" />
-    <!-- Compatibilidade com Internet Explorer, força o uso do modo mais recente de renderização -->
+
+    <!-- Garante que o Internet Explorer utilize o modo mais recente de renderização -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Responsividade para dispositivos móveis, ajusta o layout conforme a largura da tela -->
+
+    <!-- Torna o layout responsivo, ajustando a largura da página ao dispositivo do usuário -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Importação do CSS para normalizar estilos entre navegadores, garantindo consistência visual -->
+
+    <!-- Importa o arquivo normalize.css para padronizar estilos entre diferentes navegadores -->
     <link rel="stylesheet" type="text/css" href="./css/normalize.css" />
-    <!-- Importação do CSS principal do site, responsável pelo estilo visual -->
+
+    <!-- Importa o arquivo principal de estilos do site, responsável pelo visual e layout -->
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
-    <!-- Suporte a tags HTML5 em navegadores antigos (IE < 9), permite uso de elementos semânticos -->
+
+    <!-- 
+      Importa o html5shiv.js, um script que permite o uso de elementos HTML5 em navegadores antigos (principalmente IE < 9).
+      O atributo defer faz com que o script seja executado após o carregamento do HTML.
+    -->
     <script src="./js/html5shiv.js" defer></script>
-    <!-- Polyfill para Flexbox em navegadores antigos, garante compatibilidade do layout flexível -->
+
+    <!-- 
+      Importa o flexibility.js, um polyfill para Flexbox, garantindo que o layout flexível funcione em navegadores antigos.
+      Também é carregado de forma assíncrona com defer.
+    -->
     <script src="./js/flexibility.js" defer></script>
+
     <!-- =========================== FIM DO HEAD =========================== -->
   </head>
   <body>
-    <!-- =========================== INÍCIO DO BODY =========================== -->
-    <!-- Container principal que envolve todo o conteúdo da página, centraliza e limita a largura -->
+    <!-- 
+      =========================== INÍCIO DO BODY ===========================
+      O <body> contém todo o conteúdo visível da página, incluindo cabeçalho, navegação, conteúdo principal, barra lateral e rodapé.
+    -->
+
+    <!-- 
+      Container principal que centraliza e limita a largura do conteúdo do site.
+      O id="container" é utilizado para aplicar estilos de centralização e largura máxima.
+    -->
     <div id="container">
-      <!-- =========================== INÍCIO DO HEADER =========================== -->
-      <!-- Cabeçalho do site, contém o logotipo e o menu de navegação principal -->
+
+      <!-- 
+        =========================== INÍCIO DO HEADER ===========================
+        O cabeçalho do site contém o logotipo e o menu de navegação principal.
+      -->
       <header id="cabecalho">
-        <!-- Área do logotipo do museu -->
+
+        <!-- 
+          Área do logotipo do museu.
+          O logotipo é importante para a identidade visual e para SEO/acessibilidade.
+        -->
         <div id="logo">
-          <!-- Título principal do site, importante para SEO e acessibilidade -->
+          <!-- 
+            Título principal do site, envolvido por uma tag <h1> para indicar sua importância.
+            O texto "Museu Nacional" está dentro de um link que leva para a página inicial.
+          -->
           <h1>
-            <!-- Link para a página inicial, envolve o nome do museu -->
             <a href="index.html">Museu Nacional</a>
           </h1>
         </div>
-        <!-- =========================== INÍCIO DA NAVEGAÇÃO =========================== -->
-        <!-- Menu de navegação principal do site, permite acesso às principais seções -->
+
+        <!-- 
+          =========================== INÍCIO DA NAVEGAÇÃO ===========================
+          Menu de navegação principal do site, permitindo acesso às principais seções.
+        -->
         <nav id="navegacao">
-          <!-- Lista não ordenada que representa os itens do menu -->
+          <!-- 
+            Lista não ordenada representando os itens do menu.
+            Cada item é um link para uma seção do site.
+          -->
           <ul id="menu">
-            <!-- Cada item do menu é um link para uma seção do site -->
-            <li><a href="#">Home</a></li> <!-- Página inicial -->
-            <li><a href="#">Exposições</a></li> <!-- Seção de exposições -->
-            <li><a href="#">Pesquisa</a></li> <!-- Seção de pesquisa -->
-            <li><a href="#">Acervo</a></li> <!-- Seção do acervo do museu -->
-            <li><a href="#">Vídeos</a></li> <!-- Seção de vídeos -->
-            <li><a href="#">Fotos</a></li> <!-- Seção de fotos -->
-            <li><a href="#">Contato</a></li> <!-- Seção de contato -->
+            <li><a href="#">Home</a></li> <!-- Link para a página inicial -->
+            <li><a href="#">Exposições</a></li> <!-- Link para a seção de exposições -->
+            <li><a href="#">Pesquisa</a></li> <!-- Link para a seção de pesquisa -->
+            <li><a href="#">Acervo</a></li> <!-- Link para a seção do acervo -->
+            <li><a href="#">Vídeos</a></li> <!-- Link para a seção de vídeos -->
+            <li><a href="#">Fotos</a></li> <!-- Link para a seção de fotos -->
+            <li><a href="#">Contato</a></li> <!-- Link para a seção de contato -->
           </ul>
         </nav>
         <!-- =========================== FIM DA NAVEGAÇÃO =========================== -->
+
       </header>
       <!-- =========================== FIM DO HEADER =========================== -->
-      <!-- =========================== INÍCIO DO CONTEÚDO PRINCIPAL =========================== -->
+
+      <!-- 
+        =========================== INÍCIO DO CONTEÚDO PRINCIPAL ===========================
+        O conteúdo principal é dividido em duas áreas: a área central (conteúdo) e a barra lateral (aside).
+      -->
       <div id="principal">
-        <!-- Área principal de conteúdo do site -->
+
+        <!-- 
+          Área central do site, onde ficam a imagem de capa e as seções de vídeo, mapa, exposições e história.
+        -->
         <div id="conteudo">
-          <!-- =========================== INÍCIO DA SEÇÃO CAPA =========================== -->
-          <!-- Seção de destaque com a imagem principal do museu -->
+
+          <!-- 
+            =========================== INÍCIO DA SEÇÃO CAPA ===========================
+            Seção de destaque com a imagem principal do museu.
+          -->
           <section id="capa">
-            <!-- Imagem de capa do museu, com texto alternativo para acessibilidade -->
+            <!-- 
+              Imagem de capa do museu.
+              O atributo alt fornece uma descrição para leitores de tela e para o caso da imagem não carregar.
+            -->
             <img src="./image/museu.png" alt="Capa do Museu" />
           </section>
           <!-- =========================== FIM DA SEÇÃO CAPA =========================== -->
+
+          <!-- 
+            Seção de postagens, contendo quatro blocos: vídeo, mapa, exposições e história.
+            Cada bloco é representado por um elemento (deveria ser <article>, mas está escrito "artticle" por engano).
+          -->
+          <section id="postagem">
+
+            <!-- 
+              Bloco de vídeo: apresenta um vídeo do YouTube sobre o museu.
+              O id="video" permite estilização específica.
+            -->
+            <artticle id="video">
+              <h3>Vídeo: Conheça o Museu</h3>
+              <!-- 
+                Iframe incorporando um vídeo do YouTube.
+                - width/height: define o tamanho do player.
+                - src: URL do vídeo.
+                - title: acessibilidade.
+                - frameborder: sem borda.
+                - allow: permissões para recursos do player.
+                - referrerpolicy: política de privacidade.
+                - allowfullscreen: permite tela cheia.
+              -->
+              <iframe
+                width="310"
+                height="170"
+                src="https://www.youtube.com/embed/RGUYb-hivrc?si=aFSJbYm6NEriq0ap"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              >
+              </iframe>
+            </artticle>
+
+            <!-- 
+              Bloco de mapa: apresenta um mapa do Google Maps com a localização do museu.
+              O id="mapa" permite estilização específica.
+            -->
+            <artticle id="mapa">
+              <h3>MAPA: Encontre o Museu</h3>
+              <!-- 
+                Iframe incorporando um mapa do Google Maps.
+                - src: URL do mapa.
+                - width/height: tamanho do mapa.
+                - style="border: 0": remove borda.
+                - allowfullscreen: permite tela cheia.
+                - loading="lazy": carrega o mapa sob demanda.
+                - referrerpolicy: política de privacidade.
+              -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2063112591054!2d-43.2265289!3d-22.90576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997e58a085b7af%3A0x4d11e9a933d38ce3!2sMuseu%20Nacional%20-%20UFRJ!5e0!3m2!1spt-BR!2sbr!4v1751560967111!5m2!1spt-BR!2sbr"
+                width="310"
+                height="170"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </artticle>
+
+            <!-- 
+              Bloco de exposições: lista algumas exposições em destaque e um link para ver todas.
+              O id="exposicoes" permite estilização específica.
+            -->
+            <artticle id="exposicoes">
+              <h3>Exposições</h3>
+              <!-- 
+                Lista de exposições em formato de lista não ordenada.
+                Cada item é um link para uma exposição específica.
+              -->
+              <ul>
+                <li>
+                  <a href="">Os assutadores insetos</a>
+                </li>
+                <li>
+                  <a href="">O crânio de Luzia, a mulher mais antiga do Brasil</a>
+                </li>
+                <li>
+                  <a href="">Preguiça gigante e tigre-dentes-de-sabre</a>
+                </li>
+                <li>
+                  <a href="">Plantas do Brasil Central</a>
+                </li>
+                <li>
+                  <a href="">Teresa Cristina: A imperatriz Arqueira</a>
+                </li>
+                <li>
+                  <a href="">Arte com Dinossauros - Paleoarte</a>
+                </li>
+                <li>
+                  <a href=""> <strong>Veja todos (65)</strong></a>
+                </li>
+              </ul>
+            </artticle>
+
+            <!-- 
+              Bloco de história: apresenta um resumo dos 200 anos do museu e um link para saber mais.
+              O id="historia" permite estilização específica.
+            -->
+            <artticle id="historia">
+              <h3>200 Anos de História</h3>
+              <!-- 
+                Espaçamento extra com <br> (não recomendado, mas usado aqui para afastar o texto).
+              -->
+              <br><br><br>
+              <!-- 
+                Parágrafo com breve descrição sobre o aniversário de 200 anos do museu.
+              -->
+              <p>
+                Ano 2015 foi um ano histórico para o Museu Nacional. O
+                aniversário de 200 anos foi comemorado com grandes eventos e
+                exposições. Veja aqui os principais eventos
+              </p>
+              <!-- 
+                Link para uma página com mais informações sobre a história do museu.
+              -->
+              <a href="">Leia mais</a>
+            </artticle>
+          </section>
         </div>
-        <!-- =========================== INÍCIO DO ASIDE =========================== -->
-        <!-- Barra lateral com depoimento, formulário de visita e galeria de fotos -->
+
+        <!-- 
+          =========================== INÍCIO DO ASIDE ===========================
+          Barra lateral do site, contendo depoimento, formulário de visita e galeria de fotos.
+        -->
         <aside>
-          <!-- =========================== INÍCIO DA SEÇÃO DEPOIMENTO =========================== -->
-          <!-- Seção para exibir um depoimento em destaque -->
+          <!-- 
+            =========================== INÍCIO DA SEÇÃO DEPOIMENTO ===========================
+            Seção para exibir um depoimento em destaque, geralmente uma imagem ilustrativa.
+          -->
           <section id="depoimento">
-            <!-- Imagem ilustrativa do depoimento -->
+            <!-- 
+              Imagem ilustrativa do depoimento.
+              O atributo alt descreve a imagem para acessibilidade.
+            -->
             <img src="./image/depoimento.png" alt="Depoimento" />
           </section>
           <!-- =========================== FIM DA SEÇÃO DEPOIMENTO =========================== -->
-          <!-- =========================== INÍCIO DA SEÇÃO VISITA =========================== -->
-          <!-- Seção com formulário para agendamento de visita ao museu -->
+
+          <!-- 
+            =========================== INÍCIO DA SEÇÃO VISITA ===========================
+            Seção com formulário para agendamento de visita ao museu.
+          -->
           <section id="visita">
-            <!-- Título da seção de visita -->
+            <!-- 
+              Título da seção de visita, indicando o propósito do formulário.
+            -->
             <h4>Faça uma visita</h4>
-            <!-- Formulário para agendamento de visita ao museu -->
+            <!-- 
+              Formulário para agendamento de visita.
+              Não possui atributo action, ou seja, não está configurado para enviar dados a um servidor.
+            -->
             <form>
-              <!-- Agrupamento de campos do formulário -->
+              <!-- 
+                Agrupamento de campos do formulário, melhorando a organização visual e semântica.
+              -->
               <fieldset>
-                <!-- Legenda do grupo de campos -->
+                <!-- 
+                  Legenda do grupo de campos, descrevendo o objetivo do agrupamento.
+                -->
                 <legend>Selecione uma data</legend>
-                <!-- Rótulo para o campo de data -->
+
+                <!-- 
+                  Campo para inserir a data da visita.
+                  O label associa o texto ao input pelo atributo for/id.
+                  O input é do tipo texto, com valor padrão "dd/mm/aaaa".
+                -->
                 <label for="data">Data:</label>
-                <!-- Campo de texto para inserir a data da visita, valor padrão como placeholder -->
                 <input class="campo" type="text" id="data" value="dd/mm/aaaa" />
 
-                <!-- Rótulo para o campo de quantidade de pessoas -->
+                <!-- 
+                  Campo para informar a quantidade de pessoas.
+                  O input é do tipo number, valor inicial 1 e mínimo 1.
+                -->
                 <label for="numero">Qtd de pessoas:</label>
-                <!-- Campo numérico para informar o número de visitantes, valor mínimo 1 -->
                 <input
                   class="campo pessoa"
                   type="number"
@@ -105,9 +311,11 @@
                   min="1"
                 />
 
-                <!-- Rótulo para o campo de email -->
+                <!-- 
+                  Campo para inserir o email do visitante.
+                  O input é do tipo texto, com valor padrão "email@email.com".
+                -->
                 <label for="email">Email:</label>
-                <!-- Campo de texto para inserir o email do visitante, valor padrão como placeholder -->
                 <input
                   class="campo"
                   type="text"
@@ -115,7 +323,10 @@
                   value="email@email.com"
                 />
               </fieldset>
-              <!-- Botão para enviar o formulário e verificar disponibilidade -->
+              <!-- 
+                Botão para enviar o formulário e verificar disponibilidade de visita.
+                O tipo submit faz com que o formulário seja enviado ao ser clicado.
+              -->
               <input
                 class="botao"
                 type="submit"
@@ -124,23 +335,51 @@
             </form>
           </section>
           <!-- =========================== FIM DA SEÇÃO VISITA =========================== -->
-          <!-- =========================== INÍCIO DA GALERIA DE FOTOS =========================== -->
+
+          <!-- 
+            =========================== INÍCIO DA GALERIA DE FOTOS ===========================
+            Seção que exibe uma galeria de fotos do museu.
+          -->
           <section id="galeria">
-            <!-- Título da galeria de fotos -->
+            <!-- 
+              Título da galeria de fotos.
+            -->
             <h4>Galeria de fotos</h4>
-            <br /> <!-- Quebra de linha para separar o título das imagens -->
-            <!-- Imagens da galeria, cada uma com texto alternativo -->
-            <img src="./image/imagem1.jpg" alt="Galeria" />
-            <img src="./image/imagem2.jpg" alt="Galeria" />
-            <img src="./image/imagem3.jpg" alt="Galeria" />
-            <img src="./image/imagem4.jpg" alt="Galeria" />
+            <!-- 
+              Cada imagem da galeria é um link (ainda sem destino definido).
+              As imagens possuem altura e largura fixas de 93px.
+              O atributo alt está vazio, o que não é ideal para acessibilidade.
+            -->
+            <a class="imagem1" href="">
+              <img src="./image/imagem1.jpg" height="93" width="93" alt="" />
+            </a>
+            <a class="imagem2" href="">
+              <img src="./image/imagem2.jpg" height="93" width="93" alt="" />
+            </a>
+            <a class="imagem3" href="">
+              <img src="./image/imagem3.jpg" height="93" width="93" alt="" />
+            </a>
+            <a class="imagem4" href="">
+              <img src="./image/imagem4.jpg" height="93" width="93" alt="" />
+            </a>
           </section>
           <!-- =========================== FIM DA GALERIA DE FOTOS =========================== -->
         </aside>
-        <!-- =========================== FIM DO ASIDE =========================== -->
+        
+        <!-- 
+          Rodapé do site, exibindo informações de direitos autorais.
+          O id="rodape" permite estilização específica.
+          -->
+          <!-- =========================== FIM DO ASIDE =========================== -->
+          
+        </div>
+        <!-- =========================== FIM DO CONTEÚDO PRINCIPAL =========================== -->
       </div>
-      <!-- =========================== FIM DO CONTEÚDO PRINCIPAL =========================== -->
-    </div>
+      <footer id="rodape">
+      <p>
+        &copy; Copyright 2025 Museu Nacional - Todos os direitos reservados
+      </p>
+      </footer>
     <!-- =========================== FIM DO CONTAINER PRINCIPAL =========================== -->
     <!-- =========================== FIM DO BODY =========================== -->
   </body>

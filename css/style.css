@@ -1,277 +1,566 @@
 /*
+  ============================================================================
   CSS do site Museu Nacional
-  ------------------------- 
-  Este arquivo define o estilo visual do site, incluindo reset de estilos padrão, layout responsivo, tipografia, navegação, cabeçalho, links e elementos visuais como o logo. 
-  Os comentários detalham o propósito de cada bloco, seletor e propriedades importantes para facilitar a manutenção, compreensão do código e boas práticas de acessibilidade e responsividade.
+  ----------------------------------------------------------------------------
+  Este arquivo define o estilo visual do site do Museu Nacional, abrangendo:
+    - Reset e normalização de estilos para garantir consistência entre navegadores;
+    - Layout responsivo utilizando Flexbox para alinhamento e distribuição dos elementos;
+    - Tipografia padronizada e acessível;
+    - Estilização de navegação, cabeçalho, links, logo, títulos, imagens e formulários;
+    - Comentários detalhados para facilitar manutenção, compreensão e boas práticas.
+  ============================================================================
 */
 
 /* =========================== RESET E NORMALIZAÇÃO =========================== */
 /*
-  Remove margens e preenchimentos padrão de todos os elementos para garantir consistência entre navegadores.
-  Define box-sizing como border-box para facilitar o controle de tamanhos.
-  Remove sublinhado de links e marcadores de listas para um visual mais limpo.
+  Reset global: remove margens e preenchimentos padrão de todos os elementos,
+  define box-sizing para facilitar o controle do layout e remove sublinhado de links.
 */
 * {
-    margin: 0; /* Remove margens padrão dos navegadores para todos os elementos */
-    padding: 0; /* Remove preenchimentos padrão dos navegadores para todos os elementos */
-    box-sizing: border-box; /* Faz com que padding e border sejam incluídos no tamanho total do elemento, facilitando o layout */
-    text-decoration: none; /* Remove sublinhado de links por padrão, deixando-os sem decoração */
-    list-style: none; /* Remove marcadores de listas (ul, ol), deixando listas sem bolinhas ou números */
+  margin: 0; /* Remove todas as margens padrão dos elementos para evitar espaçamentos indesejados */
+  padding: 0; /* Remove todos os preenchimentos padrão dos elementos para evitar espaçamentos indesejados */
+  box-sizing: border-box; /* Faz com que padding e borda sejam incluídos no cálculo do tamanho total do elemento, facilitando o controle do layout */
+  text-decoration: none; /* Remove sublinhado de links por padrão, deixando-os mais limpos visualmente */
+  
 }
 
 /* =========================== ESTILO DO BODY =========================== */
 /*
-  Define a cor de fundo principal do site e aplica uma imagem decorativa que se repete horizontalmente no topo.
-  Define a fonte padrão para todo o site, priorizando fontes legíveis e modernas.
+  Define o fundo principal do site e a fonte padrão para todo o conteúdo.
 */
 body {
-    background: #f4f2ed url(../image/fundo.png) repeat-x; /* Cor de fundo clara (#f4f2ed) e imagem que se repete horizontalmente (repeat-x) no topo da página */
-    font: 12px "Lucida Grande", "Lucida Sans Unicode", sans-serif; /* Define tamanho da fonte (12px) e uma lista de fontes modernas e legíveis */
+  background: #f4f2ed url(../image/fundo.png) repeat-x; /* Define uma cor de fundo clara e adiciona uma imagem decorativa que se repete horizontalmente no topo da página */
+  font: 12px "Lucida Grande", "Lucida Sans Unicode", sans-serif; /* Define a família e o tamanho da fonte para garantir legibilidade e aparência moderna */
 }
 
 /* =========================== CONTAINER PRINCIPAL =========================== */
 /*
-  Centraliza todo o conteúdo do site e limita sua largura máxima para melhor leitura em telas grandes.
-  Utiliza margin auto para centralização horizontal.
+  Centraliza todo o conteúdo do site e limita sua largura máxima para melhor leitura.
 */
 #container {
-    width: 1080px; /* Define largura máxima do conteúdo principal para 1080px */
-    margin: 0 auto; /* Centraliza o container horizontalmente na página (auto nas laterais) */
+  width: 1080px; /* Define a largura máxima do conteúdo principal para evitar que fique muito largo em telas grandes */
+  height: 1189px; /* Define a altura máxima do conteúdo principal para evitar que fique muito alto em telas grandes */
+  margin: 0 auto; /* Centraliza o container horizontalmente usando margens automáticas */
 }
 
 /* =========================== LINKS GERAIS =========================== */
 /*
-  Define a cor padrão dos links em diferentes estados (normal, ativo, visitado) para manter a identidade visual.
-  Usa display flex para alinhar possíveis ícones ou elementos internos.
+  Estiliza todos os links do site em seus estados normal, ativo e visitado.
 */
-a:link, a:active, a:visited {
-    display: flex; /* Permite alinhar conteúdo interno do link (como ícones) usando flexbox */
-    color: #af670a; /* Define cor dos links (laranja/marrom) para identidade visual do museu */
+a:link,
+a:active,
+a:visited {
+  display: flex; /* Permite que o conteúdo do link seja alinhado usando Flexbox, útil para links com ícones ou múltiplos elementos */
+  color: #af670a; /* Define a cor dos links para um tom laranja/marrom, reforçando a identidade visual do museu */
 }
 
 /*
-  Ao passar o mouse sobre links, muda a cor para verde escuro, indicando interatividade.
+  Estiliza os links quando o usuário passa o mouse sobre eles.
 */
 a:hover {
-    display: flex; /* Mantém o alinhamento flexível ao passar o mouse */
-    color: #227115; /* Muda a cor do link para verde escuro ao passar o mouse, indicando que é clicável */
+  display: flex; /* Mantém o alinhamento flexível ao passar o mouse */
+  color: #227115; /* Altera a cor do link para verde escuro, indicando interatividade */
 }
 
 /* =========================== LOGO DO SITE =========================== */
 /*
-  O logo é exibido como imagem de fundo em um link, escondendo o texto visualmente para manter acessibilidade.
-  text-indent negativo garante que leitores de tela ainda possam ler o texto.
+  Estiliza o link do logo do site, exibindo uma imagem de fundo e escondendo o texto visualmente.
 */
 #logo a {
-    width: 248px; /* Define largura da área do logo */
-    height: 21px; /* Define altura da área do logo */
-    display: flex; /* Permite definir largura/altura e usar como bloco flexível */
-    background: url(../image/logo.png) no-repeat; /* Usa imagem do logo como fundo, sem repetição */
-    text-indent: -3000px; /* Esconde o texto visualmente, mas mantém para leitores de tela (acessibilidade) */
+  width: 248px; /* Define a largura da área do logo */
+  height: 21px; /* Define a altura da área do logo */
+  display: flex; /* Permite definir largura/altura e usar como bloco flexível */
+  background: url(../image/logo.png) no-repeat; /* Usa a imagem do logo como fundo, sem repetição */
+  text-indent: -3000px; /* Esconde o texto visualmente, mas mantém para acessibilidade e SEO */
 }
 
 /* =========================== CABEÇALHO =========================== */
 /*
-  Utiliza flexbox para alinhar o logo e o menu de navegação nas extremidades do cabeçalho.
-  Centraliza verticalmente os itens e define altura e espaçamento adequados.
+  Estiliza o cabeçalho do site, alinhando o logo e o menu de navegação nas extremidades.
 */
 header {
-    display: flex; /* Ativa o modelo flexbox para layout flexível do cabeçalho */
-    justify-content: space-between; /* Espaça logo e navegação nas extremidades do cabeçalho */
-    align-items: center; /* Centraliza verticalmente os itens do cabeçalho */
-    height: 55px; /* Define altura total do cabeçalho */
-    padding: 15px 0; /* Espaçamento vertical interno (15px em cima e embaixo, 0 nas laterais) */
+  display: flex; /* Ativa o modelo flexbox para o cabeçalho, permitindo alinhamento flexível dos elementos internos */
+  justify-content: space-between; /* Espaça o logo e a navegação nas extremidades do cabeçalho */
+  align-items: center; /* Centraliza verticalmente os itens do cabeçalho */
+  height: 55px; /* Define a altura total do cabeçalho */
+  padding: 15px 0; /* Adiciona espaçamento vertical interno ao cabeçalho */
 }
 
 /* =========================== NAVEGAÇÃO PRINCIPAL =========================== */
 /*
-  O menu de navegação é uma lista não ordenada (ul) exibida horizontalmente usando flexbox.
-  O espaçamento superior separa o menu do topo do cabeçalho.
+  Estiliza o menu de navegação principal, exibindo os itens horizontalmente.
 */
 nav ul {
-    display: flex; /* Itens da lista (li) ficam lado a lado, horizontalmente */
-    margin-top: 10px; /* Espaço acima da navegação para separar do topo do cabeçalho */
+  display: flex; /* Exibe os itens da lista (li) lado a lado */
+  margin-top: 10px; /* Adiciona espaço acima da navegação para separá-la do topo do cabeçalho */
 }
 
 /*
-  Os itens do menu (li) são destacados em negrito para melhor leitura e hierarquia visual.
+  Estiliza os itens do menu de navegação, destacando-os em negrito.
 */
 nav ul li {
-    font-weight: bold; /* Deixa o texto dos itens em negrito para melhor leitura e destaque */
+  font-weight: bold; /* Deixa o texto dos itens do menu em negrito para melhor leitura */
 }
 
 /*
-  Os links do menu são exibidos em caixa alta, com espaçamento entre eles e padding inferior para possível borda ao hover.
-  display flex permite que toda a área do link seja clicável e alinhada.
+  Estiliza os links do menu de navegação, deixando-os em caixa alta e com espaçamento entre eles.
 */
 nav ul li a {
-    display: flex; /* Permite definir altura/espessura do link e alinhar conteúdo interno */
-    font-size: 15px; /* Tamanho de fonte maior para destaque no menu */
-    padding-bottom: 3px; /* Espaço abaixo do texto, usado para borda ao hover */
-    margin-right: 25px; /* Espaço entre os itens do menu, separando visualmente */
-    text-transform: uppercase; /* Deixa o texto dos links em caixa alta para padronização visual */
+  display: flex; /* Permite definir altura/espessura do link e alinhar conteúdo */
+  font-size: 15px; /* Define um tamanho de fonte maior para destaque */
+  padding-bottom: 3px; /* Adiciona espaço abaixo do texto para possível borda ao passar o mouse */
+  margin-right: 25px; /* Adiciona espaço entre os itens do menu */
+  text-transform: uppercase; /* Deixa o texto dos links em caixa alta */
 }
 
 /*
-  Ao passar o mouse sobre os links do menu, mantém o estilo e adiciona uma borda inferior para feedback visual.
-  Isso ajuda o usuário a identificar o item selecionado.
+  Estiliza os links do menu ao passar o mouse, adicionando uma borda inferior.
 */
 nav ul li a:hover {
-    display: flex; /* Garante que o link continue ocupando o mesmo espaço ao passar o mouse */
-    font-size: 15px; /* Mantém o tamanho da fonte ao passar o mouse */
-    padding-bottom: min(3px, 10px); /* Mantém o espaçamento para a borda inferior, usando o menor valor entre 3px e 10px */
-    margin-right: 25px; /* Mantém o espaçamento entre itens do menu */
-    text-transform: uppercase; /* Mantém caixa alta ao passar o mouse */
-    border-bottom: 1px solid #535858; /* Adiciona uma linha sutil abaixo do link ao passar o mouse, para feedback visual */
+  display: flex; /* Mantém o link ocupando o mesmo espaço ao passar o mouse */
+  font-size: 15px; /* Mantém o tamanho da fonte */
+  padding-bottom: min(3px, 10px); /* Espaço para a borda inferior */
+  margin-right: 25px; /* Mantém o espaçamento entre itens */
+  text-transform: uppercase; /* Mantém caixa alta */
+  border-bottom: 1px solid #535858; /* Adiciona uma linha sutil abaixo do link ao passar o mouse */
 }
 
 /* =========================== CONTEÚDO PRINCIPAL =========================== */
 /*
-  O conteúdo principal (div#principal) é dividido em duas colunas usando flexbox:
-  - #conteudo: área maior para informações principais
-  - aside: barra lateral para depoimentos e formulário
-  justify-content: space-between separa as colunas.
+  Divide o conteúdo principal em duas colunas usando Flexbox: área de conteúdo e barra lateral.
 */
-#principal{
+#principal {
   display: flex; /* Ativa flexbox para dividir o conteúdo em colunas */
-  justify-content: space-between; /* Espaça as colunas (conteúdo e aside) nas extremidades */
+  justify-content: space-between; /* Espaça as colunas nas extremidades */
   align-items: flex-start; /* Alinha as colunas ao topo do container */
 }
 
 /*
-  #conteudo é a área central do site, com largura fixa, fundo claro, bordas arredondadas e sombra para destaque.
-  flex-direction column permite empilhar elementos verticalmente.
+  Estiliza a área central do site, com largura fixa, fundo claro, bordas arredondadas e sombra.
 */
-#conteudo{
+#conteudo {
   display: flex; /* Ativa flexbox para o conteúdo principal */
-  flex-direction: column; /* Empilha os elementos verticalmente dentro do conteúdo */
+  flex-direction: column; /* Empilha os elementos verticalmente */
   align-items: center; /* Centraliza os elementos filhos horizontalmente */
-  width: 710px; /* Define largura fixa da área de conteúdo */
-  height: 300px; /* Define altura fixa da área de conteúdo */
-  background: #f4f2ed; /* Fundo claro para destacar o conteúdo */
+  width: 710px; /* Largura fixa da área de conteúdo */
+  height: 300px; /* Altura fixa da área de conteúdo */
+  background: #f4f2ed; /* Fundo claro para destaque */
   margin-top: 20px; /* Espaço acima do conteúdo principal */
   border-radius: 10px; /* Bordas arredondadas para suavizar o visual */
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para dar destaque e profundidade */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade e destaque */
 }
 
 /*
-  aside é a barra lateral, também com fundo diferenciado, bordas arredondadas e sombra.
-  flex-direction column empilha os elementos (depoimento, formulário) verticalmente.
+  Seção de postagens: organiza os blocos de vídeo, mapa, exposições e história em um layout flexível, com espaçamento e quebra de linha automática.
 */
-aside{
+section#postagem {
+  display: flex; /* Ativa o modelo flexbox para organizar os artigos lado a lado */
+  width: 710px; /* Largura total da área de postagens */
+  height: 630px; /* Altura total da área de postagens */
+  gap: 20px; /* Espaçamento entre os artigos */
+  margin-top: 20px; /* Espaço acima da seção de postagens */
+  justify-content: space-between; /* Distribui os artigos igualmente no espaço disponível */
+  flex-wrap: wrap; /* Permite que os artigos quebrem linha se não couberem na largura */
+  padding: 20px; /* Espaçamento interno da seção */
+}
+
+/*
+  Título das seções internas de postagem: estiliza o título para destaque e padronização visual.
+*/
+section#postagem h3 {
+  display: flex; /* Permite alinhamento flexível do título */
+  margin: 10px; /* Espaço ao redor do título */
+  text-transform: uppercase; /* Deixa o texto do título em caixa alta para destaque */
+}
+
+/*
+  Artigos internos da seção de postagens:
+  - Utiliza flexbox para organizar o conteúdo de cada artigo (como vídeo, mapa, exposições, história).
+  - flex-direction: column empilha os elementos verticalmente (título, conteúdo, etc).
+  - align-items: center centraliza horizontalmente cada elemento dentro do artigo.
+  - justify-content: space-between distribui o espaço verticalmente, separando os elementos.
+*/
+section#postagem article {
+  display: flex; /* Ativa flexbox para o artigo */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: space-between; /* Espaça os elementos verticalmente dentro do artigo */
+}
+
+#video {
+  display: flex; /* Ativa flexbox para o artigo */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza os elementos horizontalmente */
+  justify-content: center; /* Espaça os elementos verticalmente dentro do artigo */
+  width: 310px; /* Largura fixa da área do vídeo */
+  margin-top: 10px; /* Espaço acima do vídeo */
+  height: 200px; /* Altura fixa da área do vídeo */
+  background: #cdc8b1; /* Fundo claro para destaque */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+#mapa {
+  display: flex; /* Permite alinhamento flexível do conteúdo do link */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  width: 310px; /* Largura fixa da área do mapa */
+  margin-top: 10px; /* Espaço acima do mapa */
+  height: 200px; /* Altura fixa da área do mapa */
+  background: #cdc8b1; /* Fundo claro para destaque */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+#exposicoes {
+  display: flex; /* Permite alinhamento flexível do conteúdo do link */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: flex-start; /* Alinha os elementos ao início da área */
+  width: 310px; /* Largura fixa da área de exposições */
+  margin-top: 10px; /* Espaço acima da área de exposições */
+  height: 200px; /* Altura fixa da área de exposições */
+  background: #cdc8b1; /* Fundo claro para destaque */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+#exposicoes h3 {
+  display: flex; /* Permite alinhamento flexível do conteúdo do título */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  font-size: 15px; /* Tamanho de fonte para o título */
+  justify-content: center; /* Centraliza verticalmente */
+  margin-top: 10px; /* Espaço acima do título */
+  margin-bottom: 10px; /* Espaço abaixo do título */
+}
+
+#exposicoes ul {
+  display: flex; /* Permite alinhamento flexível do conteúdo da lista */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: flex-start; /* Alinha os elementos ao início da área */
+  justify-content: flex-start; /* Alinha os elementos ao início da área */
+  margin: 0 0 25px 0; /* Espaço entre os elementos da lista */
+}
+
+#exposicoes li {
+  display: flex; /* Permite alinhamento flexível do conteúdo da lista */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: flex-end; /* Alinha os elementos ao final da área */
+  justify-content: flex-end; /* Alinha os elementos ao final da área */
+  margin-left: 10px; /* Espaço à esquerda dos elementos */
+}
+
+#exposicoes a {
+  display: flex; /* Permite alinhamento flexível do conteúdo do link */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  font-size: 10px; /* Tamanho de fonte para o link */
+  align-items: flex-end; /* Alinha os elementos ao final da área */
+  justify-content: center; /* Centraliza verticalmente */
+  margin-left: 10px; /* Espaço à esquerda dos elementos */
+}
+#historia {
+  display: flex; /* Permite alinhamento flexível do conteúdo */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: flex-start; /* Alinha os elementos ao início da área */
+  width: 310px; /* Largura fixa da área de história */
+  background: #cdc8b1; /* Fundo claro para destaque */
+  margin-top: 10px; /* Espaço acima da área de história */
+  height: 200px; /* Altura fixa da área de história */
+  gap: 10px; /* Espaçamento entre os elementos */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+#historia h3 {
+  display: flex; /* Permite alinhamento flexível do conteúdo do título */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: flex-end; /* Alinha os elementos ao final da área */
+  justify-content: flex-start; /* Alinha os elementos ao início da área */
+  margin-top: 10px; /* Espaço acima do título */
+}
+
+/*
+  Parágrafo da seção história: estiliza o texto do parágrafo para alinhamento e cor institucional.
+*/
+#historia p {
+  display: flex; /* Permite alinhamento flexível do conteúdo */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  height: 250px; /* Altura fixa do parágrafo */
+  align-items: flex-start; /* Alinha os elementos ao início da área */
+  justify-content: flex-start; /* Alinha os elementos ao início da área */
+  margin-left: 10px; /* Espaço à esquerda dos elementos */
+  margin-top: -60px; /* Espaço acima dos elementos */
+  color: #af670a; /* Cor institucional do museu */
+}
+
+/*
+  Link da seção história: mantém a cor institucional e espaçamento adequado.
+*/
+#historia a {
+  color: #af670a; /* Cor institucional do museu */
+  margin-left: 10px; /* Espaço à esquerda dos elementos */
+  margin-bottom: 10px; /* Espaço abaixo dos elementos */
+}
+
+/*
+  Barra lateral (aside): área lateral do layout, utilizada para depoimentos e formulário de visita.
+  Possui fundo diferenciado, bordas arredondadas e sombra para destaque visual.
+  Flexbox empilha os elementos verticalmente e centraliza-os.
+*/
+aside {
   display: flex; /* Ativa flexbox para a barra lateral */
   flex-direction: column; /* Empilha os elementos verticalmente */
   align-items: center; /* Centraliza os elementos filhos horizontalmente */
   width: 350px; /* Largura fixa da barra lateral */
-  height: 300px; /* Altura fixa da barra lateral */
-  background: #ebe7dd; /* Fundo diferenciado para destacar a barra lateral */
+  height: 350px; /* Altura fixa da barra lateral */
+  background: #ebe7dd; /* Fundo diferenciado */
   margin-top: 20px; /* Espaço acima da barra lateral */
-  border-radius: 10px; /* Bordas arredondadas para suavizar o visual */
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para dar destaque e profundidade */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
 }
 
 /* =========================== SEÇÃO VISITA =========================== */
 /*
-  A seção de visita (formulário) recebe destaque visual com fundo próprio, padding, bordas arredondadas e sombra.
-  flexbox centraliza e alinha os elementos do formulário.
+  Seção de visita (formulário): destaca o formulário de agendamento de visita.
+  Fundo próprio, padding, bordas arredondadas e sombra. Flexbox centraliza e alinha os campos.
 */
-section#visita{
+section#visita {
   display: flex; /* Ativa flexbox para o formulário de visita */
   width: 350px; /* Largura fixa da seção de visita */
   height: 350px; /* Altura fixa da seção de visita */
-  flex-direction: column; /* Empilha os elementos do formulário verticalmente */
-  align-items: center; /* Centraliza os elementos filhos horizontalmente */
-  justify-content: center; /* Centraliza os elementos filhos verticalmente */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
   padding: 10px 27px 27px 27px; /* Espaçamento interno: 10px em cima, 27px nas laterais e embaixo */
-  background: #cdc8b1; /* Fundo diferenciado para destacar o formulário */
+  background: #cdc8b1; /* Fundo diferenciado para o formulário */
   margin-top: 10px; /* Espaço acima da seção de visita */
-  border-radius: 10px; /* Bordas arredondadas para suavizar o visual */
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para dar destaque e profundidade */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+/* =========================== SEÇÃO GALERIA =========================== */
+/*
+  Seção galeria: exibe miniaturas de imagens em coluna, com espaçamento e fundo próprio.
+  Flexbox organiza e distribui os elementos, com bordas arredondadas e sombra.
+*/
+section#galeria {
+  display: flex; /* Ativa flexbox para a galeria */
+  width: 350px; /* Largura fixa da galeria */
+  height: 350px; /* Altura fixa da galeria */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: space-between; /* Espaça os elementos verticalmente */
+  gap: 20px; /* Espaçamento entre os elementos da galeria */
+  flex-wrap: wrap; /* Permite que os elementos quebrem linha se necessário */
+  background: #cdc8b1; /* Fundo diferenciado para o formulário */
+  margin-top: 10px; /* Espaço acima da galeria */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+/*
+  O título da galeria (h4) é alinhado à direita, com espaçamento lateral para
+  posicionamento visual. O texto é exibido em caixa alta para destaque.
+*/
+section#galeria h4 {
+  display: flex; /* Permite alinhamento flexível do título */
+  align-self: flex-end; /* Alinha o título à direita da galeria */
+  align-items: center; /* Centraliza verticalmente */
+  margin-top: 10px;
+  margin-left: 10px; /* Espaço à esquerda do título */
+  margin-right: -40px; /* Ajuste de posicionamento à direita */
+  text-transform: uppercase; /* Texto em caixa alta */
+}
+
+/*
+  Os links da galeria são exibidos como miniaturas quadradas, com imagem de
+  fundo decorativa. O display flex permite centralizar o conteúdo interno.
+*/
+section#galeria a {
+  display: flex; /* Permite alinhamento flexível do conteúdo do link */
+  background: url(../image/fundo-foto.png) no-repeat; /* Fundo decorativo da miniatura */
+  padding: 17px 15px 17px 15px; /* Espaçamento interno */
+  margin-bottom: 30px;
+}
+
+/*
+ As imagens dentro dos links da galeria são exibidas no mesmo tamanho das
+ miniaturas, com borda vermelha para destaque.
+ */
+section#galeria a img {
+  width: 93px; /* Largura da imagem */
+  height: 93px; /* Altura da imagem */
+}
+
+/*
+  Estilos específicos para cada miniatura da galeria, ajustando margens e
+  alinhamento para criar um layout dinâmico e visualmente interessante.
+*/
+
+/* Primeira imagem da galeria: ajuste de margem superior */
+section#galeria a.imagem1 {
+  display: flex;
+  width: 93px;
+  height: 93px;
+  margin-top: -20px;
+  margin-bottom: 10px; /* Ajuste para alinhar a primeira imagem */
+}
+
+/* Segunda imagem da galeria: padrão, apenas borda */
+section#galeria a.imagem2 {
+  display: flex;
+  width: 93px;
+  height: 93px;
+}
+
+/* Terceira imagem da galeria: alinhamento à esquerda e ajuste de margens */
+section#galeria a.imagem3 {
+  display: flex;
+  width: 93px;
+  height: 93px;
+  flex-direction: column; /* Permite empilhar conteúdo interno se necessário */
+  align-self: flex-start; /* Alinha a miniatura à esquerda */
+  margin-top: 30px; /* Espaço acima da miniatura */
+  margin-left: -30px; /* Ajuste para sobrepor à esquerda */
+  margin-bottom: -20px; /* Ajuste para sobrepor abaixo */
+}
+
+/* Quarta imagem da galeria: alinhamento à esquerda e ajuste de margem esquerda */
+section#galeria a.imagem4 {
+  display: flex;
+  width: 93px;
+  height: 93px;
+  flex-direction: column; /* Permite empilhar conteúdo interno se necessário */
+  align-self: flex-start; /* Alinha a miniatura à esquerda */
+  margin-left: -30px; /* Ajuste para sobrepor à esquerda */
 }
 
 /* =========================== TÍTULOS E TEXTOS =========================== */
 /*
-  h4 é usado para títulos de seções, com cor personalizada e texto em caixa alta para destaque.
+  O elemento h4 é utilizado para títulos de seções, com cor personalizada,
+  texto em caixa alta para destaque, espaçamento inferior e remoção da margem
+  padrão para melhor controle visual.
 */
-h4{
-  display: flex; /* Permite alinhar o conteúdo do título usando flexbox */
-  color: #86521a; /* Cor personalizada para títulos, destacando-os */
-  text-transform: uppercase; /* Deixa o texto do título em caixa alta */
-  padding-bottom: min(3px, 10px); /* Espaço abaixo do título, usando o menor valor entre 3px e 10px */
-  margin-bottom: 0; /* Remove margem inferior padrão do título */
+h4 {
+  display: flex; /* Permite alinhamento flexível do conteúdo do título */
+  color: #86521a; /* Cor personalizada para títulos */
+  text-transform: uppercase; /* Texto em caixa alta */
+  padding-bottom: min(3px, 10px); /* Espaço abaixo do título */
+  margin-bottom: 0; /* Remove margem inferior padrão */
 }
 
 /* =========================== IMAGENS =========================== */
 /*
-  Todas as imagens são responsivas, ocupando 100% do espaço disponível do elemento pai.
-  object-fit: cover garante que a imagem preencha o espaço sem distorcer.
-  Bordas arredondadas e sombra dão acabamento visual.
+  Todas as imagens do site são responsivas, ocupando 100% do espaço disponível
+  do elemento pai. O object-fit: cover garante que a imagem preencha o espaço
+  sem distorcer, cortando se necessário. Bordas arredondadas e sombra dão
+  acabamento visual e profundidade.
 */
 img {
-  display: flex; /* Permite alinhar a imagem usando flexbox */
+  display: flex; /* Permite alinhamento flexível da imagem */
   width: 100%; /* Imagem ocupa toda a largura do elemento pai */
   height: 100%; /* Imagem ocupa toda a altura do elemento pai */
-  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer, cortando se necessário */
-  border-radius: 10px; /* Bordas arredondadas para suavizar o visual da imagem */
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para dar destaque e profundidade à imagem */
+  object-fit: cover; /* Preenche o espaço sem distorcer */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para destaque */
 }
 
 /* =========================== CAMPOS DE FORMULÁRIO =========================== */
-input{
-  display: flex; /* Permite alinhar o campo usando flexbox */
+/*
+  Estilização dos campos de formulário (input), garantindo altura padrão,
+  bordas arredondadas, fundo claro e fonte legível. O display flex permite
+  alinhamento flexível dos campos.
+*/
+input {
+  display: flex; /* Permite alinhamento flexível do campo */
   height: 20px; /* Altura padrão dos campos de entrada */
-  border-radius: 5px; /* Bordas arredondadas para suavizar o campo */
-  background: #f4f2ed; /* Fundo claro para o campo de entrada */
-  font-size: 12px; /* Tamanho da fonte do texto digitado */
-} 
-
-input.campo{
-  display: flex; /* Permite alinhar o campo usando flexbox */
-  border: 1px solid #ada484; /* Borda sutil para destacar o campo de texto */
+  border-radius: 5px; /* Bordas arredondadas */
+  background: #f4f2ed; /* Fundo claro */
+  font-size: 12px; /* Tamanho da fonte */
 }
 
-input.botao{
-  display: flex; /* Permite alinhar o botão usando flexbox */
-  width: 100%; /* Botão ocupa toda a largura disponível do elemento pai */
+/*
+  Campos de texto (input.campo) recebem uma borda sutil para destaque visual.
+*/
+input.campo {
+  display: flex; /* Permite alinhamento flexível */
+  border: 1px solid #ada484; /* Borda sutil */
+}
+
+/*
+  Botão do formulário (input.botao) recebe largura total, altura maior para
+  facilitar o clique, cor de fundo e texto destacados, texto em caixa alta,
+  cursor de mão ao hover e espaçamento superior.
+*/
+input.botao {
+  display: flex; /* Permite alinhamento flexível */
+  width: 100%; /* Ocupa toda a largura disponível */
   height: 40px; /* Altura maior para facilitar o clique */
-  border: 1px solid #ada484; /* Borda sutil para destacar o botão */
+  border: 1px solid #ada484; /* Borda sutil */
   background: #9b9271; /* Cor de fundo do botão */
-  color: #86521a; /* Cor do texto do botão */
-  font-size: 14px; /* Tamanho da fonte do texto do botão */
-  font-weight: bold; /* Texto em negrito para destaque */
-  text-transform: uppercase; /* Texto do botão em caixa alta */
-  cursor: pointer; /* Cursor de mão ao passar sobre o botão, indicando que é clicável */
+  color: #86521a; /* Cor do texto */
+  font-size: 14px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  text-transform: uppercase; /* Texto em caixa alta */
+  cursor: pointer; /* Cursor de mão ao passar sobre o botão */
   margin-top: 10px; /* Espaço acima do botão */
 }
 
-input.botao:hover{
-  background: #86521a; /* Muda a cor de fundo ao passar o mouse para indicar interatividade */
-  color: #f4f2ed; /* Muda a cor do texto ao passar o mouse para contraste */
+/*
+  Ao passar o mouse sobre o botão, altera a cor de fundo e do texto para
+  indicar interatividade e melhorar o contraste.
+*/
+input.botao:hover {
+  background: #86521a; /* Cor de fundo ao hover */
+  color: #f4f2ed; /* Cor do texto ao hover */
 }
 
-input.pessoa{
-  display: flex; /* Permite alinhar o campo usando flexbox */
-  width: 50px; /* Largura reduzida para campos de quantidade de pessoas */
-  text-align: center; /* Centraliza o texto digitado no campo */
+/*
+  Campo específico para quantidade de pessoas (input.pessoa), com largura
+  reduzida e texto centralizado.
+*/
+input.pessoa {
+  display: flex; /* Permite alinhamento flexível */
+  width: 50px; /* Largura reduzida */
+  text-align: center; /* Centraliza o texto digitado */
 }
 
 /* =========================== FIELDSET =========================== */
-fieldset{
+/*
+  O fieldset agrupa campos do formulário, utilizando Flexbox para empilhar
+  verticalmente os campos, centralizá-los e espaçá-los uniformemente.
+  Define largura e altura fixas, padding interno e espaçamento inferior.
+*/
+fieldset {
   display: flex; /* Ativa flexbox para o agrupamento de campos */
   width: 250px; /* Largura fixa do fieldset */
   height: 250px; /* Altura fixa do fieldset */
-  padding: 10px; /* Espaçamento interno do fieldset */
+  padding: 10px; /* Espaçamento interno */
   flex-direction: column; /* Empilha os campos verticalmente */
   align-items: center; /* Centraliza os campos horizontalmente */
-  justify-content: space-between; /* Espaça os campos verticalmente dentro do fieldset */
+  justify-content: space-between; /* Espaça os campos verticalmente */
   margin-bottom: 10px; /* Espaço abaixo do fieldset */
 }
 
-/* =========================== GALERIA DE IMAGENS =========================== */
-#galeria{
-  display: flex; /* Ativa flexbox para a galeria de imagens */
-  width: 100%; /* Galeria ocupa toda a largura do elemento pai */
-  height: 100%; /* Galeria ocupa toda a altura do elemento pai */
-  justify-content: space-between; /* Espaça as imagens igualmente na galeria */
-  /* Espaço para adicionar mais propriedades se necessário */
+/*
+  Rodapé do site: área reservada para informações de direitos autorais e outros dados institucionais.
+  (Adicione estilos conforme necessário para personalizar o rodapé.)
+*/
+footer {
+  display: flex; /* Ativa flexbox para o rodapé */
+  width: 100%; /* Largura fixa do rodapé */
+  height: 100px; /* Altura fixa do rodapé */
+  margin-top: -165px; /* Espaço acima do rodapé */
+  color: #86521a; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 15px; /* Tamanho da fonte */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  align-items: center; /* Centraliza os campos horizontalmente */
+  justify-content: center; /* Centraliza os campos verticalmente */
+  background: #cdc8b1; /* Fundo claro para destaque */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
 }
