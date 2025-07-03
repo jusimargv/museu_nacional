@@ -1,5 +1,285 @@
-/*estilos gerais*/
+/*
+  CSS do site Museu Nacional
+  ------------------------- 
+  Este arquivo define o estilo visual do site, incluindo reset de estilos padrão, layout responsivo, tipografia, navegação, cabeçalho, links e elementos visuais como o logo. 
+  Os comentários detalham o propósito de cada bloco, seletor e propriedades importantes para facilitar a manutenção, compreensão do código e boas práticas de acessibilidade e responsividade.
+*/
 
+/* =========================== RESET E NORMALIZAÇÃO =========================== */
+/*
+  Remove margens e preenchimentos padrão de todos os elementos para garantir consistência entre navegadores.
+  Define box-sizing como border-box para facilitar o controle de tamanhos.
+  Remove sublinhado de links e marcadores de listas para um visual mais limpo.
+*/
+* {
+    margin: 0; /* Remove margens padrão dos navegadores */
+    padding: 0; /* Remove preenchimentos padrão dos navegadores */
+    box-sizing: border-box; /* Inclui bordas e preenchimento no cálculo do tamanho total do elemento */
+    text-decoration: none; /* Remove sublinhado de links por padrão */
+    list-style: none; /* Remove marcadores de listas (ul, ol) */
+}
 
+/* =========================== ESTILO DO BODY =========================== */
+/*
+  Define a cor de fundo principal do site e aplica uma imagem decorativa que se repete horizontalmente no topo.
+  Define a fonte padrão para todo o site, priorizando fontes legíveis e modernas.
+*/
+body {
+    background: #f4f2ed url(../image/fundo.png) repeat-x; /* Cor de fundo clara e imagem que se repete horizontalmente no topo */
+    font: 12px "Lucida Grande", "Lucida Sans Unicode", sans-serif; /* Fonte legível e moderna, tamanho base pequeno */
+}
 
+/* =========================== CONTAINER PRINCIPAL =========================== */
+/*
+  Centraliza todo o conteúdo do site e limita sua largura máxima para melhor leitura em telas grandes.
+  Utiliza margin auto para centralização horizontal.
+*/
+#container {
+    width: 1080px; /* Largura máxima do conteúdo principal */
+    margin: 0 auto; /* Centraliza horizontalmente na página */
+}
 
+/* =========================== LINKS GERAIS =========================== */
+/*
+  Define a cor padrão dos links em diferentes estados (normal, ativo, visitado) para manter a identidade visual.
+  Usa display flex para alinhar possíveis ícones ou elementos internos.
+*/
+a:link, a:active, a:visited {
+  display: flex;
+    color: #af670a; /* Tom de laranja/marrom, remete à identidade visual do museu */
+}
+
+/*
+  Ao passar o mouse sobre links, muda a cor para verde escuro, indicando interatividade.
+*/
+a:hover {
+  display: flex;
+    color: #227115; /* Verde escuro, cria contraste ao passar o mouse */
+}
+
+/* =========================== LOGO DO SITE =========================== */
+/*
+  O logo é exibido como imagem de fundo em um link, escondendo o texto visualmente para manter acessibilidade.
+  text-indent negativo garante que leitores de tela ainda possam ler o texto.
+*/
+#logo a {
+    width: 248px; /* Largura da área do logo */
+    height: 21px; /* Altura da área do logo */
+    display: flex; /* Permite definir largura/altura e usar como bloco */
+    background: url(../image/logo.png) no-repeat; /* Imagem do logo, sem repetição */
+    text-indent: -3000px; /* Esconde o texto visualmente, mas mantém para leitores de tela */
+}
+
+/* =========================== CABEÇALHO =========================== */
+/*
+  Utiliza flexbox para alinhar o logo e o menu de navegação nas extremidades do cabeçalho.
+  Centraliza verticalmente os itens e define altura e espaçamento adequados.
+*/
+header {
+    display: flex; /* Ativa o modelo flexbox para layout flexível */
+    justify-content: space-between; /* Espaça logo e navegação nas extremidades */
+    align-items: center; /* Centraliza verticalmente os itens do cabeçalho */
+    height: 55px; /* Altura total do cabeçalho */
+    padding: 15px 0; /* Espaçamento vertical interno */
+}
+
+/* =========================== NAVEGAÇÃO PRINCIPAL =========================== */
+/*
+  O menu de navegação é uma lista não ordenada (ul) exibida horizontalmente usando flexbox.
+  O espaçamento superior separa o menu do topo do cabeçalho.
+*/
+nav ul {
+    display: flex; /* Itens da lista (li) ficam lado a lado */
+    margin-top: 10px; /* Espaço acima da navegação para separar do topo */
+}
+
+/*
+  Os itens do menu (li) são destacados em negrito para melhor leitura e hierarquia visual.
+*/
+nav ul li {
+    font-weight: bold; /* Deixa o texto dos itens em negrito para melhor leitura */
+}
+
+/*
+  Os links do menu são exibidos em caixa alta, com espaçamento entre eles e padding inferior para possível borda ao hover.
+  display block permite que toda a área do link seja clicável.
+*/
+nav ul li a {
+    display: flex; /* Permite definir altura/espessura do link */
+    font-size: 15px; /* Tamanho de fonte maior para destaque */
+    padding-bottom: 3px; /* Espaço abaixo do texto, usado para borda ao hover */
+    margin-right: 25px; /* Espaço entre os itens do menu */
+    text-transform: uppercase; /* Deixa o texto dos links em caixa alta */
+}
+
+/*
+  Ao passar o mouse sobre os links do menu, mantém o estilo e adiciona uma borda inferior para feedback visual.
+  Isso ajuda o usuário a identificar o item selecionado.
+*/
+nav ul li a:hover {
+    display: flex; /* Garante que o link continue ocupando o mesmo espaço */
+    font-size: 15px; /* Mantém o tamanho da fonte */
+    padding-bottom: min(3px, 10px); /* Mantém o espaçamento para a borda */
+    margin-right: 25px; /* Mantém o espaçamento entre itens */
+    text-transform: uppercase; /* Mantém caixa alta */
+    border-bottom: 1px solid #535858; /* Adiciona uma linha sutil abaixo do link ao passar o mouse */
+}
+
+/* =========================== CONTEÚDO PRINCIPAL =========================== */
+/*
+  O conteúdo principal (div#principal) é dividido em duas colunas usando flexbox:
+  - #conteudo: área maior para informações principais
+  - aside: barra lateral para depoimentos e formulário
+  justify-content: space-between separa as colunas.
+*/
+#principal{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/*
+  #conteudo é a área central do site, com largura fixa, fundo claro, bordas arredondadas e sombra para destaque.
+  flex-direction column permite empilhar elementos verticalmente.
+*/
+#conteudo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 710px;
+  height: 300px;
+  background: #f4f2ed;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+/*
+  aside é a barra lateral, também com fundo diferenciado, bordas arredondadas e sombra.
+  flex-direction column empilha os elementos (depoimento, formulário) verticalmente.
+*/
+aside{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 300px;
+  background: #ebe7dd;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  
+}
+
+/* =========================== SEÇÃO VISITA =========================== */
+/*
+  A seção de visita (formulário) recebe destaque visual com fundo próprio, padding, bordas arredondadas e sombra.
+  flexbox centraliza e alinha os elementos do formulário.
+*/
+section#visita{
+  display: flex;
+  width: 350px;
+  height: 350px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 27px 27px 27px;
+  background: #cdc8b1;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  
+}
+
+/* =========================== TÍTULOS E TEXTOS =========================== */
+/*
+  h4 é usado para títulos de seções, com cor personalizada e texto em caixa alta para destaque.
+*/
+h4{
+  display: flex;
+  color: #86521a;
+  text-transform: uppercase;
+  padding-bottom: min(3px, 10px);
+  margin-bottom: 0;
+}
+
+/* =========================== IMAGENS =========================== */
+/*
+  Todas as imagens são responsivas, ocupando 100% do espaço disponível do elemento pai.
+  object-fit: cover garante que a imagem preencha o espaço sem distorcer.
+  Bordas arredondadas e sombra dão acabamento visual.
+*/
+img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  
+}
+
+input{
+  display: flex;
+  height: 20px;
+  border-radius: 5px;
+  background: #f4f2ed;
+  font-size: 12px;
+} 
+
+input.campo{
+  display: flex;
+  border: 1px solid #ada484;
+}
+
+input.botao{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #ada484;
+  background: #9b9271;
+  color: #86521a;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 10px;
+  
+}
+
+input.botao:hover{
+  background: #86521a;
+  color: #f4f2ed;
+}
+
+input.pessoa{
+  display: flex;
+  width: 50px;
+  text-align: center;
+  
+}
+
+fieldset{
+  display: flex;
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#galeria{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  
+  
+  
+  
+  
+  
+  
+}

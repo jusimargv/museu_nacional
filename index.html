@@ -1,10 +1,12 @@
+<!-- =========================== INÍCIO DO DOCUMENTO HTML =========================== -->
 <!-- Declaração do tipo de documento HTML5 -->
 <!doctype html>
-<!-- Início do documento HTML, idioma definido como português do Brasil -->
+<!-- Início do elemento raiz do HTML, define o idioma da página como português do Brasil -->
 <html lang="pt-br">
   <head>
+    <!-- =========================== INÍCIO DO HEAD =========================== -->
     <!-- Título da página exibido na aba do navegador -->
-    <title>Flexbox - Flexible Box Layout</title>
+    <title>Museu Nacional</title>
     <!-- Definição do conjunto de caracteres -->
     <meta charset="UTF-8" />
     <!-- Compatibilidade com Internet Explorer -->
@@ -19,8 +21,88 @@
     <script src="./js/html5shiv.js" defer></script>
     <!-- Polyfill para Flexbox em navegadores antigos -->
     <script src="./js/flexibility.js" defer></script>
+    <!-- =========================== FIM DO HEAD =========================== -->
   </head>
   <body>
-    
+    <!-- =========================== INÍCIO DO BODY =========================== -->
+    <!-- Container principal que envolve todo o conteúdo da página -->
+    <div id="container">
+      <!-- =========================== INÍCIO DO HEADER =========================== -->
+      <!-- Cabeçalho do site, contém o logotipo e o menu de navegação principal -->
+      <header id="cabecalho">
+        <div id="logo">
+          <h1><a href="index.html">Museu Nacional</a></h1>
+        </div>
+        <!-- =========================== INÍCIO DA NAVEGAÇÃO =========================== -->
+        <!-- Menu de navegação principal do site -->
+        <nav id="navegacao">
+          <ul id="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Exposições</a></li>
+            <li><a href="#">Pesquisa</a></li>
+            <li><a href="#">Acervo</a></li>
+            <li><a href="#">Vídeos</a></li>
+            <li><a href="#">Fotos</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </nav>
+        <!-- =========================== FIM DA NAVEGAÇÃO =========================== -->
+      </header>
+      <!-- =========================== FIM DO HEADER =========================== -->
+      <!-- =========================== INÍCIO DO CONTEÚDO PRINCIPAL =========================== -->
+      <div id="principal">
+        <!-- Área principal de conteúdo do site -->
+        <div id="conteudo">
+          <!-- =========================== INÍCIO DA SEÇÃO CAPA =========================== -->
+          <section id="capa">
+            <img src="./image/museu.png" alt="Capa do Museu">
+          </section>
+          <!-- =========================== FIM DA SEÇÃO CAPA =========================== -->
+        </div>
+        <!-- =========================== INÍCIO DO ASIDE =========================== -->
+        <!-- Barra lateral com depoimento e formulário de visita -->
+        <aside>
+          <!-- =========================== INÍCIO DA SEÇÃO DEPOIMENTO =========================== -->
+          <section id="depoimento">
+            <img src="./image/depoimento.png" alt="Depoimento">
+          </section>
+          <!-- =========================== FIM DA SEÇÃO DEPOIMENTO =========================== -->
+          <!-- =========================== INÍCIO DA SEÇÃO VISITA =========================== -->
+          <section id="visita">
+            <h4>Faça uma visita</h4>
+            <!-- Formulário para agendamento de visita ao museu -->
+            <form>
+              <fieldset>
+                <legend>Selecione uma data</legend>
+                <label for="data">Data:</label>
+                <input class="campo" type="text" id="data" value="dd/mm/aaaa">
+                
+                <label for="numero">Qtd de pessoas:</label>
+                <input class="campo pessoa" type="number" id="numero" value="1" min="1">
+                
+                <label for="email">Email:</label>
+                <input class="campo" type="text" id="email" value="email@email.com">
+                
+              </fieldset>
+              <input class="botao" type="submit" value="Verificar disponibilidade">
+            </form>
+          </section>
+          <!-- =========================== FIM DA SEÇÃO VISITA =========================== -->
+        <section id="galeria">
+          <h4>Galeria de fotos</h4>
+          <br>
+          <img src="./image/imagem1.jpg" alt="Galeria">
+          <img src="./image/imagem2.jpg" alt="Galeria">
+          <img src="./image/imagem3.jpg" alt="Galeria">
+          <img src="./image/imagem4.jpg" alt="Galeria">
+        </section>
+        </aside>
+        <!-- =========================== FIM DO ASIDE =========================== -->
+      </div>
+      <!-- =========================== FIM DO CONTEÚDO PRINCIPAL =========================== -->
+    </div>
+    <!-- =========================== FIM DO CONTAINER PRINCIPAL =========================== -->
+    <!-- =========================== FIM DO BODY =========================== -->
   </body>
+  <!-- =========================== FIM DO DOCUMENTO HTML =========================== -->
 </html>
