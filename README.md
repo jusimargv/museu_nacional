@@ -92,6 +92,10 @@ Desenvolvido por [Seu Nome ou Equipe].
 
 Imagens e informações institucionais são de uso fictício para fins educacionais.
 
+## Licença
+
+Este projeto é open source e está licenciado sob os termos da licença [MIT](./License.txt).
+
 ---
 
 Sinta-se à vontade para adaptar este projeto para outros museus, instituições culturais ou fins educacionais!

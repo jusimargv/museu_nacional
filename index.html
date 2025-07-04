@@ -296,7 +296,7 @@
                   O input é do tipo texto, com valor padrão "dd/mm/aaaa".
                 -->
                 <label for="data">Data:</label>
-                <input class="campo" type="text" id="data" value="dd/mm/aaaa" />
+                <input class="campo" type="date" id="data" value="dd/mm/aaaa" required placeholder="dd/mm/aaaa" />
 
                 <!-- 
                   Campo para informar a quantidade de pessoas.
@@ -309,6 +309,7 @@
                   id="numero"
                   value="1"
                   min="1"
+                  required
                 />
 
                 <!-- 
@@ -320,18 +321,16 @@
                   class="campo"
                   type="text"
                   id="email"
-                  value="email@email.com"
+                  value="email@email.com" placeholder="email@email.com" required
                 />
               </fieldset>
               <!-- 
                 Botão para enviar o formulário e verificar disponibilidade de visita.
                 O tipo submit faz com que o formulário seja enviado ao ser clicado.
               -->
-              <input
-                class="botao"
-                type="submit"
-                value="Verificar disponibilidade"
-              />
+              <p>
+                <button id="btn-visita">Verificar disponibilidade</button>
+              </p>
             </form>
           </section>
           <!-- =========================== FIM DA SEÇÃO VISITA =========================== -->

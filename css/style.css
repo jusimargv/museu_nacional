@@ -21,7 +21,7 @@
   padding: 0; /* Remove todos os preenchimentos padrão dos elementos para evitar espaçamentos indesejados */
   box-sizing: border-box; /* Faz com que padding e borda sejam incluídos no cálculo do tamanho total do elemento, facilitando o controle do layout */
   text-decoration: none; /* Remove sublinhado de links por padrão, deixando-os mais limpos visualmente */
-  
+  list-style: none;
 }
 
 /* =========================== ESTILO DO BODY =========================== */
@@ -495,11 +495,14 @@ input.campo {
   facilitar o clique, cor de fundo e texto destacados, texto em caixa alta,
   cursor de mão ao hover e espaçamento superior.
 */
-input.botao {
+#btn-visita {
   display: flex; /* Permite alinhamento flexível */
   width: 100%; /* Ocupa toda a largura disponível */
   height: 40px; /* Altura maior para facilitar o clique */
   border: 1px solid #ada484; /* Borda sutil */
+  border-radius: 5px; /* Bordas arredondadas */
+  align-items: center; /* Centraliza o texto */
+  justify-content: center; /* Centraliza o texto */
   background: #9b9271; /* Cor de fundo do botão */
   color: #86521a; /* Cor do texto */
   font-size: 14px; /* Tamanho da fonte */
