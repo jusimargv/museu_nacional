@@ -260,6 +260,16 @@ section#postagem article {
   justify-content: center; /* Centraliza verticalmente */
   margin-left: 10px; /* Espaço à esquerda dos elementos */
 }
+.link-exposicoes {
+  display: flex; /* Permite alinhamento flexível do conteúdo do link */
+  flex-direction: row; /* Empilha os elementos horizontalmente */
+  align-items: center; /* Alinha os elementos ao centro da área */
+  justify-content: center; /* Centraliza verticalmente */
+  align-self: center; /* Alinha os elementos ao centro da área */
+  margin-right: 20px; /* Espaço à direita dos elementos */
+  margin-top: 20px; /* Espaço acima dos elementos */
+  color: #af670a; /* Cor institucional do museu */
+}
 #historia {
   display: flex; /* Permite alinhamento flexível do conteúdo */
   flex-direction: column; /* Empilha os elementos verticalmente */
@@ -304,6 +314,13 @@ section#postagem article {
   margin-left: 10px; /* Espaço à esquerda dos elementos */
   margin-bottom: 10px; /* Espaço abaixo dos elementos */
 }
+#historia a:hover {
+  display: flex; /* Mantém o alinhamento flexível ao passar o mouse */
+  color: #227115; /* Altera a cor do link para verde escuro, indicando interatividade */
+  margin-left: 10px; /* Espaço à esquerda dos elementos */
+  margin-bottom: 10px; /* Espaço abaixo dos elementos */ 
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
 
 /*
   Barra lateral (aside): área lateral do layout, utilizada para depoimentos e formulário de visita.
@@ -320,6 +337,7 @@ aside {
   margin-top: 20px; /* Espaço acima da barra lateral */
   border-radius: 10px; /* Bordas arredondadas */
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+  gap: 15px; /* Espaço entre os elementos */
 }
 
 /* =========================== SEÇÃO VISITA =========================== */
@@ -511,6 +529,22 @@ input.campo {
   cursor: pointer; /* Cursor de mão ao passar sobre o botão */
   margin-top: 10px; /* Espaço acima do botão */
 }
+#btn-visita:hover {
+  display: flex; /* Permite alinhamento flexível */
+  width: 100%; /* Ocupa toda a largura disponível */
+  height: 40px; /* Altura maior para facilitar o clique */
+  border: 1px solid #ada484; /* Borda sutil */
+  border-radius: 5px; /* Bordas arredondadas */
+  align-items: center; /* Centraliza o texto */
+  justify-content: center; /* Centraliza o texto */
+  background: linear-gradient(to right, #8d7d45, #c2ae3b); /* Cor de fundo do botão */
+  color: #d31433; /* Cor do texto */
+  font-size: 14px; /* Tamanho da fonte */
+  font-weight: bold; /* Texto em negrito */
+  text-transform: uppercase; /* Texto em caixa alta */
+  cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+  margin-top: 10px; /* Espaço acima do botão */
+}
 
 /*
   Ao passar o mouse sobre o botão, altera a cor de fundo e do texto para
@@ -556,7 +590,7 @@ footer {
   display: flex; /* Ativa flexbox para o rodapé */
   width: 100%; /* Largura fixa do rodapé */
   height: 100px; /* Altura fixa do rodapé */
-  margin-top: -165px; /* Espaço acima do rodapé */
+  margin-top: -100px; /* Espaço acima do rodapé */
   color: #86521a; /* Cor do texto */
   background: #cdc8b1 url(../image/fundo-rodape.png) no-repeat;
   font-weight: bold; /* Texto em negrito */
@@ -567,4 +601,36 @@ footer {
   background: #cdc8b1; /* Fundo claro para destaque */
   border-radius: 10px; /* Bordas arredondadas */
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
+}
+
+#menu-rodape {
+  display: flex; /* Ativa flexbox para o menu */
+  flex-direction: row; /* Empilha os elementos horizontalmente */
+  align-items: center; /* Centraliza os campos horizontalmente */
+  justify-content: center; /* Centraliza os campos verticalmente */
+  margin-top: 10px; /* Espaço acima dos elementos */
+  margin-bottom: 10px; /* Espaço abaixo dos elementos */
+  color: #86521a; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 15px; /* Tamanho da fonte */
+  text-transform: uppercase; /* Texto em caixa alta */
+  cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+  margin-top: 10px; /* Espaço acima do botão */
+  gap: 10px; /* Espaço entre os elementos */
+}
+footer p {
+  display: flex; /* Ativa flexbox para o menu */
+  color: #383027; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 15px; /* Tamanho da fonte */
+  gap: 5px; /* Espaço entre os elementos */
+}
+
+
+footer p a {
+  color: #86521a; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  font-size: 15px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+  gap: 10px; /* Espaço entre os elementos */
 }

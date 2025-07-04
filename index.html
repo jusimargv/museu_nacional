@@ -138,7 +138,7 @@
               O id="video" permite estilização específica.
             -->
             <artticle id="video">
-              <h3>Vídeo: Conheça o Museu</h3>
+            <h3>Vídeo: Conheça o Museu</h3>
               <!-- 
                 Iframe incorporando um vídeo do YouTube.
                 - width/height: define o tamanho do player.
@@ -158,10 +158,10 @@
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
-              >
+                >
               </iframe>
             </artticle>
-
+            
             <!-- 
               Bloco de mapa: apresenta um mapa do Google Maps com a localização do museu.
               O id="mapa" permite estilização específica.
@@ -178,9 +178,9 @@
                 - referrerpolicy: política de privacidade.
               -->
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2063112591054!2d-43.2265289!3d-22.90576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997e58a085b7af%3A0x4d11e9a933d38ce3!2sMuseu%20Nacional%20-%20UFRJ!5e0!3m2!1spt-BR!2sbr!4v1751560967111!5m2!1spt-BR!2sbr"
-                width="310"
-                height="170"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2063112591054!2d-43.2265289!3d-22.90576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x997e58a085b7af%3A0x4d11e9a933d38ce3!2sMuseu%20Nacional%20-%20UFRJ!5e0!3m2!1spt-BR!2sbr!4v1751560967111!5m2!1spt-BR!2sbr"
+              width="310"
+              height="170"
                 style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
@@ -193,36 +193,36 @@
               O id="exposicoes" permite estilização específica.
             -->
             <artticle id="exposicoes">
-              <h3>Exposições</h3>
-              <!-- 
-                Lista de exposições em formato de lista não ordenada.
-                Cada item é um link para uma exposição específica.
+            <h3>Exposições</h3>
+            <!-- 
+              Lista de exposições em formato de lista não ordenada.
+              Cada item é um link para uma exposição específica.
               -->
               <ul>
-                <li>
-                  <a href="">Os assutadores insetos</a>
+              <li>
+              <a href="">Os assutadores insetos</a>
                 </li>
                 <li>
                   <a href="">O crânio de Luzia, a mulher mais antiga do Brasil</a>
                 </li>
                 <li>
-                  <a href="">Preguiça gigante e tigre-dentes-de-sabre</a>
-                </li>
-                <li>
+                <a href="">Preguiça gigante e tigre-dentes-de-sabre</a>
+              </li>
+              <li>
                   <a href="">Plantas do Brasil Central</a>
                 </li>
                 <li>
                   <a href="">Teresa Cristina: A imperatriz Arqueira</a>
                 </li>
                 <li>
-                  <a href="">Arte com Dinossauros - Paleoarte</a>
-                </li>
+                <a href="">Arte com Dinossauros - Paleoarte</a>
+              </li>
                 <li>
-                  <a href=""> <strong>Veja todos (65)</strong></a>
+                <a class="link-exposicoes" href=""> <strong>Veja todos (65)</strong></a>
                 </li>
               </ul>
             </artticle>
-
+            
             <!-- 
               Bloco de história: apresenta um resumo dos 200 anos do museu e um link para saber mais.
               O id="historia" permite estilização específica.
@@ -244,11 +244,11 @@
               <!-- 
                 Link para uma página com mais informações sobre a história do museu.
               -->
-              <a href="">Leia mais</a>
+              <a href="#">Leia mais</a>
             </artticle>
           </section>
         </div>
-
+        
         <!-- 
           =========================== INÍCIO DO ASIDE ===========================
           Barra lateral do site, contendo depoimento, formulário de visita e galeria de fotos.
@@ -272,8 +272,8 @@
             Seção com formulário para agendamento de visita ao museu.
           -->
           <section id="visita">
-            <!-- 
-              Título da seção de visita, indicando o propósito do formulário.
+          <!-- 
+            Título da seção de visita, indicando o propósito do formulário.
             -->
             <h4>Faça uma visita</h4>
             <!-- 
@@ -297,7 +297,7 @@
                 -->
                 <label for="data">Data:</label>
                 <input class="campo" type="date" id="data" value="dd/mm/aaaa" required placeholder="dd/mm/aaaa" />
-
+                
                 <!-- 
                   Campo para informar a quantidade de pessoas.
                   O input é do tipo number, valor inicial 1 e mínimo 1.
@@ -310,9 +310,9 @@
                   value="1"
                   min="1"
                   required
-                />
-
-                <!-- 
+                  />
+                  
+                  <!-- 
                   Campo para inserir o email do visitante.
                   O input é do tipo texto, com valor padrão "email@email.com".
                 -->
@@ -322,16 +322,16 @@
                   type="text"
                   id="email"
                   value="email@email.com" placeholder="email@email.com" required
-                />
-              </fieldset>
-              <!-- 
+                  />
+                </fieldset>
+                <!-- 
                 Botão para enviar o formulário e verificar disponibilidade de visita.
                 O tipo submit faz com que o formulário seja enviado ao ser clicado.
               -->
               <p>
-                <button id="btn-visita">Verificar disponibilidade</button>
-              </p>
-            </form>
+              <button id="btn-visita">Verificar disponibilidade</button>
+            </p>
+          </form>
           </section>
           <!-- =========================== FIM DA SEÇÃO VISITA =========================== -->
 
@@ -340,7 +340,7 @@
             Seção que exibe uma galeria de fotos do museu.
           -->
           <section id="galeria">
-            <!-- 
+          <!-- 
               Título da galeria de fotos.
             -->
             <h4>Galeria de fotos</h4>
@@ -353,14 +353,14 @@
               <img src="./image/imagem1.jpg" height="93" width="93" alt="" />
             </a>
             <a class="imagem2" href="">
-              <img src="./image/imagem2.jpg" height="93" width="93" alt="" />
+            <img src="./image/imagem2.jpg" height="93" width="93" alt="" />
             </a>
             <a class="imagem3" href="">
-              <img src="./image/imagem3.jpg" height="93" width="93" alt="" />
-            </a>
+            <img src="./image/imagem3.jpg" height="93" width="93" alt="" />
+          </a>
             <a class="imagem4" href="">
-              <img src="./image/imagem4.jpg" height="93" width="93" alt="" />
-            </a>
+            <img src="./image/imagem4.jpg" height="93" width="93" alt="" />
+          </a>
           </section>
           <!-- =========================== FIM DA GALERIA DE FOTOS =========================== -->
         </aside>
@@ -368,19 +368,29 @@
         <!-- 
           Rodapé do site, exibindo informações de direitos autorais.
           O id="rodape" permite estilização específica.
-          -->
+        -->
           <!-- =========================== FIM DO ASIDE =========================== -->
           
         </div>
         <!-- =========================== FIM DO CONTEÚDO PRINCIPAL =========================== -->
       </div>
       <footer id="rodape">
+      <ul id="menu-rodape">
+        <li><a href="#">Home</a></li> <!-- Link para a página inicial -->
+        <li><a href="#">Exposições</a></li> <!-- Link para a seção de exposições -->
+        <li><a href="#">Pesquisa</a></li> <!-- Link para a seção de pesquisa -->
+        <li><a href="#">Acervo</a></li> <!-- Link para a seção do acervo -->
+        <li><a href="#">Vídeos</a></li> <!-- Link para a seção de vídeos -->
+        <li><a href="#">Fotos</a></li> <!-- Link para a seção de fotos -->
+        <li><a href="#">Contato</a></li> <!-- Link para a seção de contato -->
+      </ul>
       <p>
-        &copy; Copyright 2025 Museu Nacional - Todos os direitos reservados
-      </p>
-      </footer>
+      &copy; Copyright 2025 <a href="">Museu Nacional</a> - Todos os direitos reservados
+    </p>
+  </footer>
     <!-- =========================== FIM DO CONTAINER PRINCIPAL =========================== -->
     <!-- =========================== FIM DO BODY =========================== -->
   </body>
   <!-- =========================== FIM DO DOCUMENTO HTML =========================== -->
-</html>
+  </html>
+  
